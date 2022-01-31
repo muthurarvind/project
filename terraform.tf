@@ -7,7 +7,7 @@ provider "aws" {
 	  instance_type = "t2.micro"
 	  subnet_id   = "subnet-049b97e1d7c38467c"
 	  key_name = "sshkey1"
-	  user_data = templatefile("${path.module}/userdata.tftpl", {endpoint = aws_db_instance.default.endpoint})
+	  user_data = templatefile("${path.module}/userdata.tftpl", {endpoint = aws_db_instance.default.endpoint,address = aws_db_instance.default.address})
 	  iam_instance_profile = "demo"
 	  security_groups = ["sg-052b7d954440d8def"]
 	  tags = {
