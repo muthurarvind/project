@@ -2,6 +2,7 @@ provider "aws" {
 	  region = "us-east-2"
 	}
 	resource "aws_instance" "myec2" {
+	  depends_on = [aws_db_instance.default]
 	  ami           = "ami-04505e74c0741db8d"
 	  instance_type = "t2.micro"
 	  subnet_id   = "subnet-049b97e1d7c38467c"
