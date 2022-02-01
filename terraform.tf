@@ -1,5 +1,5 @@
 provider "aws" {
-	  region = "us-east-2"
+	  region = "us-east-1"
 	}
 	resource "aws_instance" "myec2" {
 	  depends_on = [aws_db_instance.default]
